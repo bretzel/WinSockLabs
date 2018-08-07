@@ -51,7 +51,7 @@ DWORD TcpServer::Run()
     ZeroMemory(service, NI_MAXSERV);
 
     if (getnameinfo((sockaddr*)&CliAddrInfo, sizeof(sockaddr_in), host, NI_MAXHOST, service, NI_MAXSERV, 0) == 0){
-        std::cout << "Remote host(unknown name) on port" << service << '\n';
+        std::cout << "Remote host(" << host << ") on port" << service << '\n';
     }
     else{
         inet_ntop(AF_INET, &CliAddrInfo.sin_addr, host, NI_MAXHOST);
